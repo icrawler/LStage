@@ -1,6 +1,6 @@
 LSTAGE_dir = "lstage/"
 
-require ("class")
+class = require "middleclass"
 
 local stage = {}
 

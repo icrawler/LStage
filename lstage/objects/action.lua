@@ -1,4 +1,4 @@
-local Action = class:new()
+local Action = class("LStage.Action")
 
 function Action:init()
 	self._disposed = false

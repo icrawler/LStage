@@ -1,10 +1,6 @@
-local Actor = class:new()
+local Actor = class("LStage.Actor")
 
-function Actor:init()
-	self:super()
-end
-
-function Actor:super()
+function Actor:initialize()
 	self._pos = {x=0, y=0}
 	self._disposed = false
 	self._actions = {}
