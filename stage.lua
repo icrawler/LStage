@@ -5,6 +5,8 @@ require ("class")
 local stage = {}
 
 stage.actor = require (LSTAGE_dir .. "objects/actor")
+stage.action = require (LSTAGE_dir .. "objects/action")
+stage.actions = require (LSTAGE_dir .. "objects/Actions")
 
 stage.actors = {}
 
