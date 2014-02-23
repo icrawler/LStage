@@ -1,7 +1,7 @@
 function love.load()
 	stage = require("stage")
 
-	testActor = stage.actor:new()
+	testActor = stage.Actor:new()
 	
 	function testActor:draw()
 		love.graphics.setColor(255, 255, 255)
@@ -12,7 +12,7 @@ function love.load()
 
 	stage.addActor(testActor)
 
-	testAction = stage.action:new()
+	testAction = stage.Action:new()
 
 	function testAction:act(dt, actor)
 		actor:setX(actor:getX()+50*dt)
