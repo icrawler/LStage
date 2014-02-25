@@ -43,9 +43,11 @@ function Tween:update(dt)
 		else
 			self._curTime = self._duration
 			self._done = true
+			return self._b
 		end
+		return self._easeFunc(self._a, self._b, self._curTime, self._duration)
 	end
-	return self._easeFunc(self._a, self._b, self._curTime, self._duration)
+	return self._b
 end
 
 function Tween:getTime()
