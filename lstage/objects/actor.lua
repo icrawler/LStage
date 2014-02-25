@@ -4,6 +4,9 @@ function Actor:initialize()
 	self._pos = {x=0, y=0}
 	self._disposed = false
 	self._actions = {}
+	self._width = 10
+	self._height = 10
+	self._alpha = 255
 end
 
 function Actor:act(dt)
@@ -20,6 +23,10 @@ function Actor:act(dt)
 	end
 end
 
+function Actor:collides(x, y)
+
+end
+
 function Actor:addAction(action)
 	table.insert(self._actions, action)
 end
@@ -30,6 +37,30 @@ end
 
 function Actor:draw()
 
+end
+
+function Actor:setAlpha(a)
+	self._alpha = a
+end
+
+function Actor:getAlpha()
+	return self._alpha
+end
+
+function Actor:setWidth(width)
+	self._width = width
+end
+
+function Actor:setHeight(height)
+	self._height = height
+end
+
+function Actor:getWidth()
+	return self._width
+end
+
+function Actor:getHeight()
+	return self._height
 end
 
 function Actor:setX(x)

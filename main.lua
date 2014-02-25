@@ -2,9 +2,9 @@ function love.load()
 	stage = require("stage")
 
 	testActor = stage.Actor:new()
-	
+
 	function testActor:draw()
-		love.graphics.setColor(255, 255, 255)
+		love.graphics.setColor(255, 255, 255, self:getAlpha())
 		love.graphics.circle("fill", self:getX(), self:getY(), 20)
 	end
 
@@ -13,9 +13,11 @@ function love.load()
 	stage.addActor(testActor)
 
 	testAction = stage.Action:new()
+	testAction.tween = stage.Tween:new(stage.Ease.inOutSine, 0, 255, 5)
 
 	function testAction:act(dt, actor)
-		actor:setX(actor:getX()+50*dt)
+		actor:setX(actor:getX()+75*dt)
+		actor:setAlpha(self.tween:update(dt))
 	end
 
 	testActor:addAction(testAction)
@@ -27,6 +29,7 @@ end
 
 function love.draw()
 	stage.draw()
+	love.graphics.circle("fill", testActor:getX(), 500-testActor:getAlpha()/2, 2)
 end
 
 -- dont mind me...

@@ -4,10 +4,13 @@ class = require "middleclass"
 
 local stage = {}
 
+stage.Ease = require (LSTAGE_dir .. "objects/ease")
+stage.Tween = stage.Ease.Tween
 stage.Actor = require (LSTAGE_dir .. "objects/actor")
 stage.Action = require (LSTAGE_dir .. "objects/action")
 stage.Actions = require (LSTAGE_dir .. "objects/Actions")
 stage.Group = require (LSTAGE_dir .. "objects/group")
+
 
 stage.actors = {}
 
@@ -53,9 +56,11 @@ function stage.draw()
 	love.graphics.rotate(stage.rotation)
 	love.graphics.translate(stage.pos.x, stage.pos.y)
 	for _, v in ipairs(stage.actors) do
+		love.graphics.setColor(255, 255, 255)
 		v:draw()
 	end
 	love.graphics.pop()
+	love.graphics.setColor(255, 255, 255)
 end
 
 return stage
