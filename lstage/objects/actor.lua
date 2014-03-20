@@ -24,7 +24,7 @@ function Actor:act(dt)
 end
 
 function Actor:collides(x, y)
-
+	return x <= self._width+self._pos.x and x >= self._pos.x and y <= self._height+self._pos.y and y >= self._pos.y
 end
 
 function Actor:addAction(action)
@@ -55,6 +55,11 @@ function Actor:setHeight(height)
 	self._height = height
 end
 
+function Actor:setSize(width, height)
+	self._width = width
+	self._height = height
+end
+
 function Actor:getWidth()
 	return self._width
 end
@@ -71,12 +76,21 @@ function Actor:setY(y)
 	self._pos.y = y
 end
 
+function Actor:setPos(x, y)
+	self._pos.x = x
+	self._pos.y = y
+end
+
 function Actor:getX()
 	return self._pos.x
 end
 
 function Actor:getY()
 	return self._pos.y
+end
+
+function Actor:getPos()
+	return self._pos.x, self._pos.y
 end
 
 return Actor

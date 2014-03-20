@@ -21,6 +21,13 @@ function love.load()
 	end
 
 	testActor:addAction(testAction)
+
+	testButton = stage.ui.SimpleButton:new()
+	testButton:setX(100)
+	testButton:setY(300)
+	testButton:setSize(50, 20)
+
+	stage.addActor(testButton)
 end
 
 function love.update(dt)

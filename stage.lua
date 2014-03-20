@@ -8,9 +8,11 @@ stage.Ease = require (LSTAGE_dir .. "objects/ease")
 stage.Tween = stage.Ease.Tween
 stage.Actor = require (LSTAGE_dir .. "objects/actor")
 stage.Action = require (LSTAGE_dir .. "objects/action")
-stage.Actions = require (LSTAGE_dir .. "objects/Actions")
 stage.Group = require (LSTAGE_dir .. "objects/group")
-
+stage.ui = {}
+stage.ui.Button = require (LSTAGE_dir .. "objects/button")
+stage.ui.SimpleButton = require (LSTAGE_dir .. "objects/SimpleButton")
+stage.ui.skin = require (LSTAGE_dir .. "objects/skin")
 
 stage.actors = {}
 
